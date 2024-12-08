@@ -436,7 +436,7 @@ export function TShirtCanvas({
 
       {/* T-shirt PNG Base */}
       <div
-        className={`absolute inset-0 scale-75 -translate-y-[10%] transition-opacity duration-300 ${
+        className={`absolute inset-0 scale-75 -translate-y-[13%] transition-opacity duration-300 ${
           isLoading ? "opacity-0" : "opacity-100"
         }`}
       >
@@ -461,7 +461,7 @@ export function TShirtCanvas({
 
       {/* Supreme-style Box Logo */}
       <div
-        className={`absolute inset-0 flex items-center justify-center translate-y-[-24%] transition-opacity duration-300 ${
+        className={`absolute inset-0 flex items-center justify-center translate-y-[-22%] transition-opacity duration-300 ${
           isLoading ? "opacity-0" : "opacity-100"
         }`}
       >

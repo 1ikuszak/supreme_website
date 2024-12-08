@@ -38,7 +38,7 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-black">
       {/* Hero Section */}
-      <section className="relative h-screen flex flex-col">
+      <section className="relative h-[calc(100vh-100px)] flex flex-col">
         {/* Background Image */}
 
         {/* Main Content */}
@@ -377,17 +377,17 @@ WEEK 1 F/W 19`}
       </div>
 
       {/* T-Shirt Customizer Section */}
-      <section className="px-4 bg-zinc-100 py-10">
-        <div className="relative">
+      <section className="bg-zinc-100 py-10 h-screen">
+        <div className="relative container mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 h-full">
             {/* Use the TShirtViewer component */}
             <TShirtViewer />
 
             {/* Controls Panel */}
-            <div className="bg-zinc-100 p-8 font-mono grid grid-cols-1">
+            <div className="bg-zinc-100 p-8 font-mono grid grid-cols-1 w-full">
               {/* Supreme Genesis Panel styled as ASCII Terminal */}
-              <div className="col-span-1">
-                <div className="flex gap-1 mb-2">
+              <div className="col-span-1 w-full">
+                <div className="flex gap-1 mb-2 w-full">
                   {[
                     { id: "controls", label: "CONTROLS" },
                     { id: "archives", label: "ARCHIVES" },
@@ -431,7 +431,7 @@ WEEK 1 F/W 19`}
                   </div>
 
                   {/* Terminal Content */}
-                  <div className="h-[400px] px-4 py-8 overflow-y-scroll !visible [scrollbar-width:thin] [&::-webkit-scrollbar]:w-1.5 [&::-webkit-scrollbar]:block [&::-webkit-scrollbar-track]:bg-black [&::-webkit-scrollbar-track]:border-[1px] [&::-webkit-scrollbar-track]:border-neutral-800 [&::-webkit-scrollbar-thumb]:bg-[#ee1133] [&::-webkit-scrollbar-thumb]:hover:bg-red-600 [&::-webkit-scrollbar-thumb]:transition-colors">
+                  <div className="h-[calc(100vh-340px)] px-4 py-8 overflow-y-scroll !visible [scrollbar-width:thin] [&::-webkit-scrollbar]:w-1.5 [&::-webkit-scrollbar]:block [&::-webkit-scrollbar-track]:bg-black [&::-webkit-scrollbar-track]:border-[1px] [&::-webkit-scrollbar-track]:border-neutral-800 [&::-webkit-scrollbar-thumb]:bg-[#ee1133] [&::-webkit-scrollbar-thumb]:hover:bg-red-600 [&::-webkit-scrollbar-thumb]:transition-colors">
                     <pre className="font-mono text-xs text-black whitespace-pre">
                       {activeTab === "archives" ? (
                         `SUPREME ARCHIVES 
@@ -588,7 +588,7 @@ root@supreme:~# accessing control_panel...`}
 │ └─────────┘  └─────────┘  └─────────┘  └─────────┘  └─────────┘                      │
 │     ▼            ▼            ▼            ▼            ▼                            │
 │ ╔═══════╗    ╔═══════╗    ╔═══════╗    ╔═══════╗    ╔═══════╗                        │
-│ ║█████${boxColor === "green" ? "█" : "░"}║    ║█████${
+│ ║█████${boxColor === "green" ? "" : "░"}║    ║█████${
                                 boxColor === "black" ? "█" : "░"
                               }║    ║█████${
                                 boxColor === "blue" ? "█" : "░"
@@ -645,7 +645,7 @@ root@supreme:~# accessing control_panel...`}
                                 size === "XL" ? "▣" : "□"
                               }├──┘       └─┤${
                                 size === "XXL" ? "▣" : "□"
-                              }├───┘                │
+                              }├──┘                 │
 │   └─┘            └─┘            └─┘            └─┘            └─┘                    │
 │   ║▒${size === "S" ? "▓" : "▒"}▒║          ║▒${
                                 size === "M" ? "▓" : "▒"
@@ -656,7 +656,7 @@ root@supreme:~# accessing control_panel...`}
                               }▒║          ║▒${
                                 size === "XXL" ? "▓" : "▒"
                               }▒║                  │
-└─────────────────────────────────────────────────────────────────────────────────────┘`}
+└──────────────────────────────────────────────────────────────────────────────────────┘`}
                             </pre>
                             <div className="flex flex-row gap-1 mt-2">
                               {sizes.map((s) => (
@@ -817,9 +817,10 @@ PRICE: $18.00  STOCK: [████████░░░░░░░░] 52%
       </section>
 
       {/* New Supreme Logo Section */}
-      <section className="bg-black py-32 px-4">
-        <pre className="font-mono text-white text-center whitespace-pre text-[0.5rem] sm:text-xs md:text-base lg:text-lg">
-          {`
+      <section className="bg-black py-32 px-4 h-screen">
+        <div className="flex flex-col items-center justify-center h-full">
+          <pre className="font-mono text-white text-center whitespace-pre text-[0.5rem] sm:text-xs md:text-base lg:text-lg">
+            {`
 ██████╗ ██╗   ██╗██████╗ ██████╗ ███████╗███╗   ███╗███████╗
 ██╔════╝██║   ██║██╔══██╗██╔══██╗██╔════╝████╗ ████║██╔════╝
 ███████╗██║   ██║██████╔╝██████╔╝█████╗  ██╔████╔██║█████╗  
@@ -833,7 +834,240 @@ PRICE: $18.00  STOCK: [████████░░░░░░░░] 52%
 ██╔═╝  ██║███╗██║    ██╔══╝ ████╝██║██╔═══╝ ╚════██║
 ██║     ╚███╔███╔╝    ███████╗╚██████╔╝███████╗     ██║
 ╚═╝      ╚══╝╚══╝     ╚══════╝ ╚═════╝ ╚══════╝     ╚═╝`}
-        </pre>
+          </pre>
+        </div>
+      </section>
+      <section className="bg-zinc-100 py-20">
+        <div className="container mx-auto">
+          <div className="grid grid-cols-1 col-span-1 gap-y-12">
+            {/* T-Shirt Color Selector */}
+            <div>
+              <pre className="font-mono text-xs text-black whitespace-pre">
+                {`┌─ TSHIRT COLOR CONTROL MATRIX ────────────────────────────────────────────────────────┐
+│                                                                                      │
+│     ${tshirtColor === tshirtColors[0] ? "♦   " : "◇   "}           ${
+                  tshirtColor === tshirtColors[1] ? "♦   " : "◇   "
+                }           ${
+                  tshirtColor === tshirtColors[2] ? "♦   " : "◇   "
+                }           ${
+                  tshirtColor === tshirtColors[3] ? "♦ " : "◇ "
+                }                                  │
+│ [${tshirtColor === tshirtColors[0] ? "═══╡" : "   |"}           ${
+                  tshirtColor === tshirtColors[1] ? "═══╡" : "   |"
+                }           ${
+                  tshirtColor === tshirtColors[2] ? "═══╡" : "   |"
+                }           ${
+                  tshirtColor === tshirtColors[3] ? "═══╡" : "   |"
+                }               ]                   │
+│   WHITE          BLACK          NAVY           RED                                   │
+│                                                                                      │
+└──────────────────────────────────────────────────────────────────────────────────────┘`}
+              </pre>
+              <div className="flex flex-row gap-1 mt-2">
+                {tshirtColors.map((color) => (
+                  <button
+                    key={color}
+                    onClick={() => setTshirtColor(color)}
+                    className={`
+                                    w-[100px] font-mono text-[10px] border border-neutral-300 p-1.5
+                                    ${
+                                      tshirtColor === color
+                                        ? "bg-neutral-100 text-red-600 border-red-600"
+                                        : "bg-white text-neutral-600 hover:bg-neutral-50"
+                                    }
+                                    transition-all duration-200
+                                  `}
+                  >
+                    <pre>{`${color.toUpperCase()}`}</pre>
+                  </button>
+                ))}
+              </div>
+            </div>
+
+            {/* Box Color Selector */}
+            <div>
+              <pre className="font-mono text-xs text-black whitespace-pre">
+                {`┌─ BOX COLOR REACTOR SYSTEM ───────────────────────────────────────────────────────────┐
+│                                                                                      │
+│ ┌─────────┐  ┌─────────┐  ┌─────────┐  ┌─────────┐  ┌─────────┐                      │
+│ │ GREEN   │  │ BLACK   │  │ BLUE    │  │ RED     │  │ SKYBLUE │                      │
+│ │ [${boxColor === "green" ? "▣" : "□"}]     │  │ [${
+                  boxColor === "black" ? "▣" : "□"
+                }]     │  │ [${boxColor === "blue" ? "▣" : "□"}]     │  │ [${
+                  boxColor === "red" ? "▣" : "□"
+                }]     │  │ [${
+                  boxColor === "skyBlue" ? "▣" : "□"
+                }]     │                      │
+│ └─────────┘  └─────────┘  └─────────┘  └─────────┘  └─────────┘                      │
+│     ▼            ▼            ▼            ▼            ▼                            │
+│ ╔═══════╗    ╔═══════╗    ╔═══════╗    ╔═══════╗    ╔═══════╗                        │
+│ ║█████${boxColor === "green" ? "" : "░"}║    ║█████${
+                  boxColor === "black" ? "█" : "░"
+                }║    ║█████${boxColor === "blue" ? "█" : "░"}║    ║█████${
+                  boxColor === "red" ? "█" : "░"
+                }║    ║█████${
+                  boxColor === "skyBlue" ? "█" : "░"
+                }║                              │  
+│ ╚═══════╝    ╚═══════╝    ╚═══════╝    ╚═══════╝    ╚═══════╝                        │
+└──────────────────────────────────────────────────────────────────────────────────────┘`}
+              </pre>
+              <div className="flex flex-row gap-1 mt-2">
+                {boxColors.map((color) => (
+                  <button
+                    key={color}
+                    onClick={() => setBoxColor(color)}
+                    className={`
+                                    w-[100px] font-mono text-[10px] border border-neutral-300 p-1.5
+                                    ${
+                                      boxColor === color
+                                        ? "bg-neutral-100 text-red-600 border-red-600"
+                                        : "bg-white text-neutral-600 hover:bg-neutral-50"
+                                    }
+                                    transition-all duration-200
+                                  `}
+                  >
+                    <pre>{`${color.toUpperCase()}`}</pre>
+                  </button>
+                ))}
+              </div>
+            </div>
+
+            {/* Size Matrix */}
+            <div>
+              <pre className="font-mono text-xs text-black whitespace-pre">
+                {`┌─ SIZE MATRIX CONFIGURATION ──────────────────────────────────────────────────────────┐
+│                                                                                      │
+│ ┌─[S]─┐        ┌─[M]─┐        ┌─[L]─┐        ┌─[XL]─┐       ┌─[XXL]─┐                │
+│ │${size === "S" ? "◆" : "◇"}    │        │${
+                  size === "M" ? "◆" : "◇"
+                }    │        │${size === "L" ? "◆" : "◇"}    │        │${
+                  size === "XL" ? "◆" : "◇"
+                }     │       │${
+                  size === "XXL" ? "◆" : "◇"
+                }      │                │
+│ │ ┌─┐ │        │ ┌─┐ │        │ ┌─┐ │        │ ┌─┐  │       │ ┌─┐   │                │
+│ └─┤${size === "S" ? "▣" : "□"}├─┘        └─┤${
+                  size === "M" ? "▣" : "□"
+                }├─┘        └─┤${size === "L" ? "▣" : "□"}├─┘        └─┤${
+                  size === "XL" ? "▣" : "□"
+                }├──┘       └─┤${
+                  size === "XXL" ? "▣" : "□"
+                }├──┘                 │
+│   └─┘            └─┘            └─┘            └─┘            └─┘                    │
+│   ║▒${size === "S" ? "▓" : "▒"}▒║          ║▒${
+                  size === "M" ? "▓" : "▒"
+                }▒║          ║▒${size === "L" ? "▓" : "▒"}▒║          ║▒${
+                  size === "XL" ? "▓" : "▒"
+                }▒║          ║▒${
+                  size === "XXL" ? "▓" : "▒"
+                }▒║                  │
+└──────────────────────────────────────────────────────────────────────────────────────┘`}
+              </pre>
+              <div className="flex flex-row gap-1 mt-2">
+                {sizes.map((s) => (
+                  <button
+                    key={s}
+                    onClick={() => setSize(s)}
+                    className={`
+                                    w-[100px] font-mono text-[10px] border border-neutral-300 p-1.5
+                                    ${
+                                      size === s
+                                        ? "bg-neutral-100 text-red-600 border-red-600"
+                                        : "bg-white text-neutral-600 hover:bg-neutral-50"
+                                    }
+                                    transition-all duration-200
+                                  `}
+                  >
+                    <pre>{`${s}`}</pre>
+                  </button>
+                ))}
+              </div>
+            </div>
+
+            {/* Effects Matrix */}
+            <div>
+              <pre className="font-mono text-xs text-black whitespace-pre">
+                {`┌─ EFFECTS REACTOR MATRIX ─────────────────────────────────────────────────────────────┐
+│                                                                                      │
+│     MATRIX    [${
+                  animationPattern === "matrix" ? "▣" : "□"
+                } ]────────╥─────┐         ╭─►──╥────╥──════════════════╗             │
+│    ╭───◄${
+                  animationPattern === "matrix" ? "▓▓▓▓▓▓▓▓▓▓" : "░░░░░░░░░░"
+                }►──╮  <<║>>   │         │    ║    ║ POWER: ${
+                  animationPattern === "matrix" ? "▰▰▰▰▰▰" : "▱▱▱▱▱▱"
+                }    ║             │
+│    ╰───┤▼∞≡∞▼├───╢▣▣▣╟────╯     └───∞≡∞───┘    ║ STATUS: ${
+                  animationPattern === "matrix"
+                    ? "ACTIVE        "
+                    : "STANDBY       "
+                }║             │
+│                                                                                      │
+│     PULSE    [${
+                  animationPattern === "pulse" ? "▣" : "□"
+                } ]─────────╥─────┐         ╭─►──╥────╥──════════════════╗             │
+│    ╭───◄${
+                  animationPattern === "pulse" ? "▓▓▓▓▓▓▓▓▓▓" : "░░░░░░░░░░"
+                }►──╮  <<║>>   │         │    ║    ║ POWER: ${
+                  animationPattern === "pulse" ? "▰▰▰▰▰▰" : "▱▱▱▱▱▱"
+                }    ║             │
+│    ╰───┤▼∞≡∞▼├───╢▣▣▣╟────╯     └───∞≡∞───┘    ║ STATUS: ${
+                  animationPattern === "pulse"
+                    ? "ACTIVE        "
+                    : "STANDBY       "
+                }║             │
+│                                                                                      │
+│    GALAXY    [${
+                  animationPattern === "galaxy" ? "▣" : "□"
+                } ]─────────╥─────┐         ╭─►──╥────╥──════════════════╗             │
+│    ╭───◄${
+                  animationPattern === "galaxy" ? "▓▓▓▓▓▓▓▓▓▓" : "░░░░░░░░░░"
+                }►──╮  <<║>>   │         │    ║    ║ POWER: ${
+                  animationPattern === "galaxy" ? "▰▰▰▰▰▰" : "▱▱▱▱▱▱"
+                }    ║             │
+│    ╰───┤▼∞≡∞▼├───╢▣▣▣╟────╯     └───∞≡∞───┘    ║ STATUS: ${
+                  animationPattern === "galaxy"
+                    ? "ACTIVE        "
+                    : "STANDBY       "
+                }║             │
+│                                                                                      │
+│    PLASMA    [${
+                  animationPattern === "plasma" ? "▣" : "□"
+                } ]─────────╥─────┐         ╭─►──╥────╥──════════════════╗             │
+│    ╭───◄${
+                  animationPattern === "plasma" ? "▓▓▓▓▓▓▓▓▓▓" : "░░░░░░░░░░"
+                }►──╮  <<║>>   │         │    ║    ║ POWER: ${
+                  animationPattern === "plasma" ? "▰▰▰▰▰▰" : "▱▱▱▱▱▱"
+                }    ║             │
+│    ╰───┤▼∞≡∞▼├───╢▣▣▣╟────╯     └───∞≡∞───┘    ║ STATUS: ${
+                  animationPattern === "plasma"
+                    ? "ACTIVE        "
+                    : "STANDBY       "
+                }║             │
+└──────────────────────────────────────────────────────────────────────────────────────┘`}
+              </pre>
+              <div className="flex flex-row gap-1 mt-2">
+                {animationPatterns.map((pattern) => (
+                  <button
+                    key={pattern}
+                    onClick={() => setAnimationPattern(pattern)}
+                    className={`
+                                    w-[100px] font-mono text-[10px] border border-neutral-300 p-1.5
+                                    ${
+                                      animationPattern === pattern
+                                        ? "bg-neutral-100 text-red-600 border-red-600"
+                                        : "bg-white text-neutral-600 hover:bg-neutral-50"
+                                    }
+                                    transition-all duration-200
+                                  `}
+                  >
+                    <pre>{`${pattern.toUpperCase()}`}</pre>
+                  </button>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
       </section>
     </div>
   );
